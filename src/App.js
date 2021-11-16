@@ -1,18 +1,25 @@
 import React from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
-
-// 쿼리 클라이언트 생성
-const queryClient = new QueryClient();
+import { Link, Route, Routes } from 'react-router-dom';
+import User from './components/User';
+import UserList from './components/UserList';
 
 function App() {
   return (
-    // 쿼리 클라이언트 프로바이더로 감싸기
-    <QueryClientProvider client={queryClient}>
-      <div> Hello, React! </div>
-      {/* 개발자 도구 닫힌 상태로 App에 붙여주기 */}
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <>
+      <ul>
+        <li>
+          <Link to='/'>UserList 페이지</Link>
+        </li>
+        <li>
+          <Link to='/user'>User 페이지</Link>
+        </li>
+      </ul>
+      <Routes>
+        <Route path='/' element={<UserList />} />
+        <Route path='/user/:id' element={<User />} />
+        <Route path='/user/' element={<User />} />
+      </Routes>
+    </>
   );
 }
 

@@ -3,10 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+
+// 쿼리 클라이언트 생성
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // + 데이터 리페칭!
+      // refetchOnMount: true, // 마운트 시
+      // refetchInterval: true // 정해진 ms 간격으로
+      refetchOnWindowFocus: false, // 화면이 포커스 시
+      // refetchIntervalInBackground: true // 백그라운드에서 일정 ms 간격으로
+    },
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
