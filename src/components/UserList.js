@@ -31,7 +31,7 @@ function UserList() {
     <>
       <button onClick={refetch}>데이터 가져오기</button>
       <ul>
-        {users.map(user => (
+        {users?.map(user => (
           <UserItem
             key={user.id}
             id={user.id}

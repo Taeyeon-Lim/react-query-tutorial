@@ -2,6 +2,9 @@ import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import User from './components/User';
 import UserList from './components/UserList';
+import UserPosts from './components/UserPosts';
+import Users from './components/Users';
+import UsersPosts from './components/UsersPosts';
 
 function App() {
   return (
@@ -13,11 +16,23 @@ function App() {
         <li>
           <Link to='/user'>User 페이지</Link>
         </li>
+        <li>
+          <Link to='/usersPosts'>UsersPosts 페이지</Link>
+        </li>
+        <li>
+          <Link to='/users'>Users 페이지</Link>
+        </li>
+        <li>
+          <Link to='/userPosts'>userPosts 페이지</Link>
+        </li>
       </ul>
       <Routes>
         <Route path='/' element={<UserList />} />
         <Route path='/user/:id' element={<User />} />
         <Route path='/user/' element={<User />} />
+        <Route path='/usersPosts' element={<UsersPosts />} />
+        <Route path='/users' element={<Users />} />
+        <Route path='/userPosts' element={<UserPosts nickName='Samantha' />} />
       </Routes>
     </>
   );

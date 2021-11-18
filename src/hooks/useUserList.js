@@ -16,5 +16,6 @@ export const useUserList = (onSuccess, onError) => {
       }, []);
       return newArrData;
     },
+    enabled: false,
   });
 };
