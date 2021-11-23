@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Albums from './components/Albums';
+import InfiniteQueries from './components/InfiniteQueries';
 import User from './components/User';
 import UserList from './components/UserList';
 import UserPosts from './components/UserPosts';
@@ -29,6 +30,9 @@ function App() {
         <li>
           <Link to='/paginatedQuery'>paginated-Query 페이지</Link>
         </li>
+        <li>
+          <Link to='/infiniteQueries'>infinite-Queries 페이지</Link>
+        </li>
       </ul>
       <Routes>
         <Route path='/' element={<UserList />} />
@@ -38,6 +42,7 @@ function App() {
         <Route path='/users' element={<Users />} />
         <Route path='/userPosts' element={<UserPosts nickName='Samantha' />} />
         <Route path='/paginatedQuery' element={<Albums />} />
+        <Route path='/infiniteQueries' element={<InfiniteQueries />} />
       </Routes>
     </>
   );
