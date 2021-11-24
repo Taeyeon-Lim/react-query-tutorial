@@ -18,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve-json": "npx json-server ./src/usersData.js --port 4000 --routes ./src/routes.json"
   },
   "eslintConfig": {
     "extends": [

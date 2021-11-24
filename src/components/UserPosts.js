@@ -31,7 +31,7 @@ function UserPosts({ nickName }) {
       <h2>
         작성자 닉네임: {nickName} (ID: {userId})
       </h2>
-      <h3> 포스팅 목록 </h3>
+      <h3>포스팅 목록</h3>
       <hr />
       <ul>
         {posts?.map(post => (
