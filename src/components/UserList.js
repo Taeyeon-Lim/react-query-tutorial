@@ -37,11 +37,10 @@ function UserList() {
 
   const onAddUser = () => {
     const user = { name, username: nickname, email };
-    console.log(user);
     addUser(user);
   };
 
-  if (isLoading || isFetching) return <div>로딩 중...</div>;
+  if (isLoading) return <div>로딩 중...</div>;
   if (isError) return <div>에러...!</div>;
 
   return (
